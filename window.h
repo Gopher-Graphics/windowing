@@ -6,15 +6,16 @@
 typedef struct GGW_Window_s *GGW_Window;
 
 typedef enum {
-  GGWError_OutOfMemoryError,
-  GGWError_InvalidTargetRegion,
-  GGWError_BackendUnavialable
-} GGWError;
+  GGWRESULT_SUCCESS,
+  GGWRESULT_OUT_OF_MEMORY,
+  GGWRESULT_INVALID_TARGET_REGION,
+  GGWRESULT_BACKEND_UNVAILABLE,
+} GGWResult;
 
 typedef uint16_t GGW_ImageDimension;
 
 typedef struct {
-  GGW_ImageDimension offsetX;
+GGW_ImageDimension offsetX;
   GGW_ImageDimension offsetY;
   GGW_ImageDimension width;
   GGW_ImageDimension height;
@@ -41,7 +42,7 @@ typedef struct {
  * 
  * Possible errors: (TODO fill this out)
  */
-GGWError GGW_createWindow(GGW_WindowCreateParams params, GGW_Window* out_window);
+GGWResult GGW_createWindow(GGW_WindowCreateParams params, GGW_Window* out_window);
 
 /**
  * Destroys a window. Cannot error.
@@ -56,7 +57,7 @@ void GGW_destroyWindow(GGW_Window window);
  * data:         The data to be copied onto the window. This is in BGRA format.
  * targetRegion: The region of the window that the data will be copied to.
  */
-GGWError GGW_copyImageData(uint8_t* data, GGW_ImageRegion targetRegion);
+GGWResult GGW_copyImageData(uint8_t* data, GGW_ImageRegion targetRegion);
 
 #include "keycodes.h"
 
@@ -81,7 +82,7 @@ typedef struct {
  * Function that tells the backend that this is a good time to check for events.
  * The backend can ignore this if it is unnecessary.
  */
-void GGW_pollEvents();
+void GGW_pollEvents(void);
 
 /**
  * Gets a single event and writes it to out_event. 

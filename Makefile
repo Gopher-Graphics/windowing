@@ -1,7 +1,5 @@
 CC ?= clang
-CFLAGS=-Wall
-
-
+CFLAGS=-Wall -std=c99
 
 build/%.o: plat/%.c
 	mkdir -p ${dir $@}
