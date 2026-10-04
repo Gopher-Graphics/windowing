@@ -8,10 +8,10 @@ format:
 
 build/%.o: plat/%.c
 	mkdir -p ${dir $@}
-	$(CC) -g -c -o $@ $< ${CFLAGS}
+	$(CC) -c -o $@ $< ${CFLAGS}
 
 build/window-linux.so: build/linux.o
-	$(CC) -g -shared -o $@ $^
+	$(CC) -shared -o $@ $^
 
 build/window-win32.dll: build/win32.o
-	$(CC) -g -shared -o $@ $^
+	$(CC) -shared -o $@ $^
