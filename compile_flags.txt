@@ -1,4 +1,0 @@
--Wall
--std=c99
--DUNICODE
--D_UNICODE
