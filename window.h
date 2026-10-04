@@ -43,8 +43,8 @@ typedef struct {
  *
  * Possible errors: (TODO fill this out)
  */
-GGWResult
-GGW_createWindow(GGW_WindowCreateParams params, GGW_Window *out_window);
+GGWResult GGW_createWindow(GGW_WindowCreateParams params,
+                           GGW_Window *out_window);
 
 /**
  * Destroys a window. Cannot error.
@@ -59,9 +59,8 @@ void GGW_destroyWindow(GGW_Window window);
  * data:         The data to be copied onto the window. This is in BGRA format.
  * targetRegion: The region of the window that the data will be copied to.
  */
-GGWResult GGW_copyImageData(
-    GGW_Window window, uint8_t *data, GGW_ImageRegion targetRegion
-);
+GGWResult GGW_copyImageData(GGW_Window window, uint8_t *data,
+                            GGW_ImageRegion targetRegion);
 
 typedef enum {
     CLOSE_REQUESTED,

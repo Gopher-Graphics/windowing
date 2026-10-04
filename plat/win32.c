@@ -38,8 +38,8 @@ LPWSTR win32Widen(const char *utf8) {
     return utf16;
 }
 
-LRESULT CALLBACK
-WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam,
+                            LPARAM lParam) {
     // Get the GGW_Window from the property set in GGW_createWindow.
     GGW_Window window = (GGW_Window)GetProp(hWnd, PROPERTY_LIST_NAME);
 
@@ -69,8 +69,8 @@ WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     // No return to ensure all cases return a value
 }
 
-GGWResult
-GGW_createWindow(GGW_WindowCreateParams params, GGW_Window *out_window) {
+GGWResult GGW_createWindow(GGW_WindowCreateParams params,
+                           GGW_Window *out_window) {
     // Get the module of the calling .exe file.
     // TODO: look into using GetModuleHandleEx to prevent race conditions if the
     // driver code is multithreaded.
@@ -89,17 +89,16 @@ GGW_createWindow(GGW_WindowCreateParams params, GGW_Window *out_window) {
 
     LPWSTR name_widened = win32Widen(params.name);
 
-    HWND hWnd = CreateWindowEx(
-        0,                            // window styles
-        WINDOW_CLASS_NAME,            // name of the window class
-        name_widened,                 // name of the window
-        WS_OVERLAPPEDWINDOW,          // window style
-        CW_USEDEFAULT, CW_USEDEFAULT, // window position
-        params.width, params.height,  // window size
-        NULL,                         // Parent window
-        NULL,                         // Menu
-        hInstance,                    // instance handle
-        NULL                          // additional application data
+    HWND hWnd = CreateWindowEx(0,                   // window styles
+                               WINDOW_CLASS_NAME,   // name of the window class
+                               name_widened,        // name of the window
+                               WS_OVERLAPPEDWINDOW, // window style
+                               CW_USEDEFAULT, CW_USEDEFAULT, // window position
+                               params.width, params.height,  // window size
+                               NULL,                         // Parent window
+                               NULL,                         // Menu
+                               hInstance,                    // instance handle
+                               NULL // additional application data
     );
 
     if (hWnd == NULL) {
@@ -127,13 +126,10 @@ GGW_createWindow(GGW_WindowCreateParams params, GGW_Window *out_window) {
     return GGWRESULT_SUCCESS;
 }
 
-void GGW_destroyWindow(GGW_Window window) {
-    DestroyWindow(window->hWnd);
-}
+void GGW_destroyWindow(GGW_Window window) { DestroyWindow(window->hWnd); }
 
-GGWResult GGW_copyImageData(
-    GGW_Window window, uint8_t *data, GGW_ImageRegion targetRegion
-) {
+GGWResult GGW_copyImageData(GGW_Window window, uint8_t *data,
+                            GGW_ImageRegion targetRegion) {
     // TODO
     return GGWRESULT_SUCCESS;
 }
