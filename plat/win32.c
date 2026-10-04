@@ -126,7 +126,10 @@ GGWResult GGW_createWindow(GGW_WindowCreateParams params,
     return GGWRESULT_SUCCESS;
 }
 
-void GGW_destroyWindow(GGW_Window window) { DestroyWindow(window->hWnd); }
+void GGW_destroyWindow(GGW_Window window) {
+    DestroyWindow(window->hWnd);
+    free(window);
+}
 
 GGWResult GGW_copyImageData(GGW_Window window, uint8_t *data,
                             GGW_ImageRegion targetRegion) {
