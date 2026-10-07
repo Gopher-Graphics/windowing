@@ -11,3 +11,8 @@ A WIP windowing library developed by the Gopher Graphics club.
         - [Create Window Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/learnwin32/creating-a-window)
 - MacOS
     - [ ] Cocoa (this one may never be complete)
+
+Make sure to autoformat:
+```sh
+make format
+```
