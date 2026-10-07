@@ -11,6 +11,7 @@ typedef enum {
     GGWRESULT_OUT_OF_MEMORY,
     GGWRESULT_INVALID_TARGET_REGION,
     GGWRESULT_BACKEND_UNVAILABLE,
+    GGWRESULT_WIN32_WINDOW_CREATION_FAILED,
 } GGWResult;
 
 typedef uint16_t GGW_ImageDimension;
@@ -62,6 +63,7 @@ GGWResult GGW_copyImageData(GGW_Window window, uint8_t *data,
                             GGW_ImageRegion targetRegion);
 
 typedef enum {
+    CLOSE_REQUESTED,
     REDRAW_REQUESTED,
     KEY_PRESSED,
     KEY_RELEASED,

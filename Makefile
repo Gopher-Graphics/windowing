@@ -1,5 +1,5 @@
 CC ?= clang
-CFLAGS=-Wall -std=c99
+CFLAGS=-Wall -std=c99 -DUNICODE -D_UNICODE
 
 SRC_H_FILES=${wildcard *.c *.h plat/*.c plat/*.h}
 
@@ -10,9 +10,8 @@ build/%.o: plat/%.c
 	mkdir -p ${dir $@}
 	$(CC) -c -o $@ $< ${CFLAGS}
 
-build/linux.o: plat/wayland.h plat/x11.h keycodes.h window.h
+build/window-linux.so: build/linux.o
+	$(CC) -shared -o $@ $^
 
-build/window-linux.so: build/linux.o build/x11.o build/wayland.o
-	
-
-# build/linux.so
+build/window-win32.dll: build/win32.o
+	$(CC) -shared -o $@ $^
