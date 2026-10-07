@@ -3,6 +3,7 @@ CFLAGS=-Wall -std=c99
 
 SRC_H_FILES=${wildcard *.c *.h plat/*.c plat/*.h}
 
+.PHONY: format
 format:
 	@clang-format -i ${SRC_H_FILES}
 
