@@ -1,4 +1,7 @@
 # Gopher Graphics - Windowing
+
+Contact: @Dolphin2Point1 or come to our meetings at [gopher.graphics/events](https://gopher.graphics/events/?an=github-windowing)
+
 A WIP windowing library developed by the Gopher Graphics club.
 - Linux 
     - [ ] X11
