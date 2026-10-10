@@ -137,13 +137,14 @@ int GGW_plat_X11_nextEvent(GGW_Window in_window, GGW_Event *out_event) {
         if (cm_ev->type != window->atoms.wm_protocols_atom) {
             break;
         }
-        if (cm_ev->data.data32[0] == window->atoms.wm_protocols_atom) {
-            break;
+        if (cm_ev->data.data32[0] == window->atoms.wm_delete_window_atom) {
+            *out_event = (GGW_Event){
+                .event_type = CLOSE_REQUESTED,
+            };
+            return 1;
         }
-        *out_event = (GGW_Event){
-            .event_type = CLOSE_REQUESTED,
-        };
-        return 1;
+
+        break;
 
     default:
         break;
