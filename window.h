@@ -11,6 +11,7 @@ typedef enum {
     GGWRESULT_OUT_OF_MEMORY,
     GGWRESULT_INVALID_TARGET_REGION,
     GGWRESULT_BACKEND_UNVAILABLE,
+    GGWRESULT_INVALID_PARAMS,
 } GGWResult;
 
 typedef uint16_t GGW_ImageDimension;
@@ -67,6 +68,7 @@ typedef enum {
     KEY_RELEASED,
     MOUSE_MOVED,
     MOUSE_CLICKED,
+    CLOSE_REQUESTED,
 } GGW_EventType;
 
 typedef union {

@@ -1,3 +1,4 @@
+#include "linux.h"
 #include "../window.h"
 #include "wayland.h"
 #include "x11.h"
@@ -9,11 +10,6 @@
     case GGW_BACKEND_X11:                                                      \
         return (X11);                                                          \
     }
-
-typedef enum {
-    GGW_BACKEND_WAYLAND,
-    GGW_BACKEND_X11,
-} GGW_Linux_Backend;
 
 GGWResult GGW_createWindow(GGW_WindowCreateParams params,
                            GGW_Window *out_window) {
