@@ -1,9 +1,9 @@
 #define _POSIX_SOURCE
 #define _POSIX_C_SOURCE 199309L
 #include "../window.h"
-#include <stdio.h>
-#include <stdbool.h>
 #include <signal.h>
+#include <stdbool.h>
+#include <stdio.h>
 #include <time.h>
 
 #define GGWCHECK(f)                                                            \
@@ -24,13 +24,13 @@ int main(void) {
             .name = "Test!",
         },
         &window));
-    
+
     bool close_requested = false;
-    while(!close_requested) {
+    while (!close_requested) {
         GGW_pollEvents(window);
         GGW_Event event;
-        while(GGW_nextEvent(window, &event)) {
-            if(event.event_type == CLOSE_REQUESTED) {
+        while (GGW_nextEvent(window, &event)) {
+            if (event.event_type == CLOSE_REQUESTED) {
                 close_requested = true;
             }
         }
