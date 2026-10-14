@@ -8,7 +8,10 @@
 #define GGW_SINGLE_CODE(CODE, VAL, ENUM) GGW_SINGLE_CODE##ENUM(CODE, VAL)
 
 /*
- * Keycodes are defined here, using a name and a ASCII keycode number
+ * Keycodes are defined here, using a name and keycode number.
+ *
+ * For keys that have an ASCII equivalent, their ASCII keycode is preferred.
+ * Other keys, like CONTROL, get a negative keycode.
  *
  * ENUM is 1 if we are defining these values in an enum, and 0 if we are
  * defining them in a switch statement mapping values to names
