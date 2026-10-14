@@ -14,6 +14,34 @@
  * defining them in a switch statement mapping values to names
  */
 #define GGW_ALL_CODES(ENUM)                                                    \
+    GGW_SINGLE_CODE(DELETE, -0x01, ENUM)                                       \
+    GGW_SINGLE_CODE(BACKSPACE, -0x02, ENUM)                                    \
+    GGW_SINGLE_CODE(INSERT, -0x03, ENUM)                                       \
+    GGW_SINGLE_CODE(SHIFT, -0x04, ENUM)                                        \
+    GGW_SINGLE_CODE(CTRL, -0x05, ENUM)                                         \
+    GGW_SINGLE_CODE(MOD, -0x06, ENUM)                                          \
+    GGW_SINGLE_CODE(ALT, -0x07, ENUM)                                          \
+    GGW_SINGLE_CODE(FUNCTION, -0x08, ENUM)                                     \
+    GGW_SINGLE_CODE(CAPS_LOCK, -0x09, ENUM)                                    \
+    GGW_SINGLE_CODE(ESCAPE, -0x0A, ENUM)                                       \
+    GGW_SINGLE_CODE(HOME, -0x0B, ENUM)                                         \
+    GGW_SINGLE_CODE(PAGE_UP, -0x0C, ENUM)                                      \
+    GGW_SINGLE_CODE(PAGE_DOWN, -0x0D, ENUM)                                    \
+    GGW_SINGLE_CODE(END, -0x0E, ENUM)                                          \
+    GGW_SINGLE_CODE(PRINT_SCREEN, -0x0F, ENUM)                                 \
+    GGW_SINGLE_CODE(F1, -0x10, ENUM)                                           \
+    GGW_SINGLE_CODE(F2, -0x11, ENUM)                                           \
+    GGW_SINGLE_CODE(F3, -0x12, ENUM)                                           \
+    GGW_SINGLE_CODE(F4, -0x13, ENUM)                                           \
+    GGW_SINGLE_CODE(F5, -0x14, ENUM)                                           \
+    GGW_SINGLE_CODE(F6, -0x15, ENUM)                                           \
+    GGW_SINGLE_CODE(F7, -0x16, ENUM)                                           \
+    GGW_SINGLE_CODE(F8, -0x17, ENUM)                                           \
+    GGW_SINGLE_CODE(F9, -0x18, ENUM)                                           \
+    GGW_SINGLE_CODE(F10, -0x19, ENUM)                                          \
+    GGW_SINGLE_CODE(F11, -0x1A, ENUM)                                          \
+    GGW_SINGLE_CODE(F12, -0x1B, ENUM)                                          \
+                                                                               \
     GGW_SINGLE_CODE(TAB, 0x09, ENUM)                                           \
     GGW_SINGLE_CODE(SPACE, 0x20, ENUM)                                         \
     GGW_SINGLE_CODE(EXCLAMATION_MARK, 0x21, ENUM)                              \
