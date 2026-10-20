@@ -1,0 +1,2 @@
+CompileFlags:
+    Add: [-Wall, -xc, -std=c99, -DUNICODE, -D_UNICODE]
